@@ -1,0 +1,44 @@
+{
+  "name": "@mszgs/hardverapro-preview",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "packageManager": "pnpm@7.5.0",
+  "private": true,
+  "scripts": {
+    "watch": "rollup -w -c rollup.config.js",
+    "build": "rollup -c rollup.config.js",
+    "lint": "eslint ./src/*",
+    "lint:ci": "eslint -f github-actions ./src/*",
+    "semantic-release": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "userscript"
+  ],
+  "author": {
+    "name": "MSZGs",
+    "email": "ksmark@mszgs.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@cspell/eslint-plugin": "^6.2.3",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@types/tampermonkey": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "cspell": "^6.2.3",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-github-actions": "^1.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "rollup": "^2.76.0",
+    "rollup-plugin-userscript-metablock": "^0.3.1",
+    "semantic-release": "^19.0.3",
+    "semantic-release-plus": "^20.0.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
+  }
+}

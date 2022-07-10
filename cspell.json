@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "ignorePaths": ["node_modules"],
+  "caseSensitive": false,
+  "words": ["HardverApró", "Tampermonkey", "pnpm"],
+  "ignoreWords": ["noframes", "rollup-plugin-userscript-metablock"]
+}

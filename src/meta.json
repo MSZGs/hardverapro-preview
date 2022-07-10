@@ -1,0 +1,9 @@
+{
+  "name": "Hardverapro Preview",
+  "namespace": "https://mszgs.com/",
+  "match": ["https://hardverapro.hu/*"],
+  "grant": ["GM.xmlHttpRequest"],
+  "connect": ["hardverapro.hu"],
+  "run-at": "document-end",
+  "noframes": true
+}

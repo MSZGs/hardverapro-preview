@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": false,
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "outDir": "./build/",
+    "target": "ES6",
+    "importHelpers": true
+  },
+  "include": ["./src/*"]
+}
