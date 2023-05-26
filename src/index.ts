@@ -21,6 +21,19 @@ function createPreviewId(adId: AdId, asSelector = false) {
   return `${asSelector ? "#" : ""}preview-${adId}`;
 }
 
+async function fixCarousel(page: Element, id: AdId) {
+  const newID = `preview-carousel-${id}`;
+  const carouselSelector = `[data-carousel-id="${newID}"`;
+
+  page.querySelectorAll<HTMLElement>("#uad-images-carousel").forEach(x => (x.dataset.carouselId = newID));
+
+  page.querySelectorAll<HTMLAnchorElement>('a[href="#uad-images-carousel"]').forEach(x => (x.href = carouselSelector));
+
+  page
+    .querySelectorAll<HTMLElement>('*[data-target="#uad-images-carousel"]')
+    .forEach(x => (x.dataset.target = carouselSelector));
+}
+
 async function loadPreview(id: AdId) {
   const url = getAdUrl(id);
   const response = await GMfetch({ url, method: "GET" });
@@ -38,6 +51,8 @@ async function loadPreview(id: AdId) {
   page.querySelector("div.uad-actions")?.remove();
   // Remove social buttons
   page.querySelector("button.fakebook")?.remove();
+
+  await fixCarousel(page, id);
 
   page.id = createPreviewId(id);
   return page;
