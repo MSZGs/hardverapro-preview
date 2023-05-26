@@ -1,7 +1,7 @@
 {
   "name": "@mszgs/hardverapro-preview",
   "version": "0.0.0",
-  "description": "",
+  "description": "Userscript for displaying the content of advertisements without opening it",
   "type": "module",
   "packageManager": "pnpm@8.5.1",
   "private": true,
@@ -14,7 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "userscript"
+    "userscript",
+    "hardverapro.hu",
+    "preview"
   ],
   "author": {
     "name": "MSZGs",

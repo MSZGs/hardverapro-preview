@@ -12,7 +12,6 @@ const packageMeta = JSON.parse(readFileSync("./package.json", { encoding: "utf8"
 const userScriptMeta = {
   author: `${packageMeta.author.name} <${packageMeta.author.email}>`,
   version: env.BUILD_VERSION ?? "0.0.0-dev",
-  description: packageMeta.description,
 };
 
 export default defineConfig({

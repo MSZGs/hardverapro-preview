@@ -1,10 +1,20 @@
 {
-  "name": "Hardverapro Preview",
+  "name": {
+    "default": "HardverApró - Ad Preview",
+    "en": "HardverApró - Ad Preview",
+    "hu": "HardverApró - Hirdetés Előnézet"
+  },
+  "description": {
+    "default": "Displays the content of advertisements without opening it",
+    "en": "Displays the content of advertisements without opening it",
+    "hu": "Hirdetések tartalmának megjelenítése a hirdetés oldalának megnyitása nélkül."
+  },
   "namespace": "https://mszgs.com/",
   "match": ["https://hardverapro.hu/*"],
   "grant": ["GM.xmlHttpRequest"],
   "connect": ["hardverapro.hu"],
   "run-at": "document-end",
   "noframes": true,
-  "downloadURL": "https://github.com/MSZGs/hardverapro-preview/releases/latest/download/hardverapro-preview.user.js"
+  "downloadURL": "https://github.com/MSZGs/hardverapro-preview/releases/latest/download/hardverapro-preview.user.js",
+  "source": "https://github.com/MSZGs/hardverapro-preview"
 }
