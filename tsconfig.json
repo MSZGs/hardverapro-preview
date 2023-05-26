@@ -7,7 +7,8 @@
     "noImplicitAny": true,
     "outDir": "./build/",
     "target": "ES6",
-    "importHelpers": true
+    "importHelpers": true,
+    "types": ["jquery", "bootstrap", "tampermonkey"]
   },
   "include": ["./src/*"]
 }

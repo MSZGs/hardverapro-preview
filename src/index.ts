@@ -55,6 +55,7 @@ async function loadPreview(id: AdId) {
   await fixCarousel(page, id);
 
   page.id = createPreviewId(id);
+  page.classList.add("collapse", "show");
   return page;
 }
 
@@ -63,7 +64,7 @@ function togglePreview(adId: AdId) {
   if (!previewElement) {
     throw new Error(`Preview element not found! (adId:${adId})`);
   }
-  previewElement.hidden = !previewElement.hidden;
+  $(previewElement).collapse("toggle");
 }
 
 function clickHandler(this: AdListElement) {
