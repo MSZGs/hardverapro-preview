@@ -21,7 +21,7 @@ function createPreviewId(adId: AdId, asSelector = false) {
   return `${asSelector ? "#" : ""}preview-${adId}`;
 }
 
-async function fixCarousel(page: Element, id: AdId) {
+function fixCarousel(page: Element, id: AdId) {
   const newID = `preview-carousel-${id}`;
   const carouselSelector = `[data-carousel-id="${newID}"`;
 
@@ -32,9 +32,16 @@ async function fixCarousel(page: Element, id: AdId) {
   page
     .querySelectorAll<HTMLElement>('*[data-target="#uad-images-carousel"]')
     .forEach(x => (x.dataset.target = carouselSelector));
+
+  page.querySelectorAll("a.carousel-control-expand,.carousel-item > a").forEach(x =>
+    x.addEventListener("click", ev => {
+      ev.preventDefault();
+      page.querySelector("#uad-images-carousel").classList.toggle("fullscreen");
+    })
+  );
 }
 
-async function loadPreview(id: AdId) {
+async function loadPreview(id: AdId, element: Element) {
   const url = getAdUrl(id);
   const response = await GMfetch({ url, method: "GET" });
   const responseDocument = parseHTML(response.responseText);
@@ -45,6 +52,9 @@ async function loadPreview(id: AdId) {
     throw new Error(`Couldn't get the preview body! (adId:${id})`);
   }
 
+  page.id = createPreviewId(id);
+  page.classList.add("collapse", "show");
+
   // Remove header
   page.querySelector("div:first-of-type")?.remove();
   // Remove footer
@@ -52,10 +62,10 @@ async function loadPreview(id: AdId) {
   // Remove social buttons
   page.querySelector("button.fakebook")?.remove();
 
-  await fixCarousel(page, id);
+  element.after(page);
 
-  page.id = createPreviewId(id);
-  page.classList.add("collapse", "show");
+  fixCarousel(page, id);
+
   return page;
 }
 
@@ -74,9 +84,8 @@ function clickHandler(this: AdListElement) {
 
   if (state == "NONE") {
     setState("LOADING");
-    loadPreview(id)
-      .then(page => {
-        this.after(page);
+    loadPreview(id, this)
+      .then(() => {
         setState("LOADED");
       })
       .catch(error => {
