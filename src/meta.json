@@ -15,6 +15,7 @@
   "connect": ["hardverapro.hu"],
   "run-at": "document-end",
   "noframes": true,
+  "updateURL": "https://github.com/MSZGs/hardverapro-preview/releases/latest/download/hardverapro-preview.user.js",
   "downloadURL": "https://github.com/MSZGs/hardverapro-preview/releases/latest/download/hardverapro-preview.user.js",
   "source": "https://github.com/MSZGs/hardverapro-preview"
 }
