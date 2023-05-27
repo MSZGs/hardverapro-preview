@@ -8,6 +8,8 @@
 
 Userscript a hirdetések tartalmának megjelenítésére, a hirdetés oldalának megnyitása nélkül.
 
+![Demo](./docs/demo.webp)
+
 ## Telepítés
 
 1. Telepítsen egy **userscript** bővítményt a böngészőjébe. Pl.: [TamperMonkey](https://www.tampermonkey.net/)
