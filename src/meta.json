@@ -11,7 +11,7 @@
   },
   "namespace": "https://mszgs.com/",
   "match": ["https://hardverapro.hu/*"],
-  "grant": ["GM.xmlHttpRequest"],
+  "grant": ["none"],
   "connect": ["hardverapro.hu"],
   "run-at": "document-end",
   "noframes": true,

@@ -3,5 +3,5 @@
   "ignorePaths": ["node_modules"],
   "caseSensitive": false,
   "words": ["HardverApró", "Tampermonkey", "pnpm"],
-  "ignoreWords": ["noframes", "rollup-plugin-userscript-metablock"]
+  "ignoreWords": ["noframes", "rollup-plugin-userscript-metablock", "uadid", "fakebook"]
 }

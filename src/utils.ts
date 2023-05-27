@@ -1,20 +1,7 @@
-export type GMfetchMethod = "GET" | "HEAD" | "POST";
-export type GMfetchOptions = { url: string; method?: GMfetchMethod };
-
-export function GMfetch({ url, method }: GMfetchOptions): Promise<Tampermonkey.ResponseBase> {
-  return new Promise((resolve, reject) => {
-    GM.xmlHttpRequest({
-      url,
-      method,
-      onload: response => resolve(response),
-      onabort: () => reject(),
-      onerror: error => reject(error),
-      ontimeout: () => reject(),
-    });
-  });
+export function initCollapse(element: HTMLElement) {
+  element.classList.add("collapse");
 }
 
-const _parser = new DOMParser();
-export function parseHTML(htmlText: string) {
-  return _parser.parseFromString(htmlText, "text/html");
+export function toggleCollapse(element: HTMLElement, force?: boolean) {
+  $(element).collapse(force === undefined ? "toggle" : force ? "show" : "hide");
 }
