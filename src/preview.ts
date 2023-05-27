@@ -26,6 +26,9 @@ function preparePage(element: Document, id: AdId) {
   // Remove social buttons
   body.querySelector("button.fakebook")?.remove();
 
+  // Remove unnecessary margin after the previews
+  body.style.marginBottom = "0px";
+
   //Set meta
   body.dataset.previewFor = id;
 
